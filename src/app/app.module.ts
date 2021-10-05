@@ -15,6 +15,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/', pathMatch: 'full'},
   {path: '', component: InicioComponent},
   {path: 'ofertas', component: OfertasLaboralesComponent},
+  {path: 'hojas_de_vida', component: HojasDeVidaComponent},
 ];
 
 @NgModule({
