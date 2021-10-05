@@ -1,1 +1,19 @@
-<p>ofertas-laborales works!</p>
+<owl-carousel-o [options]="customOptions">
+
+    <ng-container *ngFor="let slide of slides">
+        <ng-template carouselSlide [id.]="slide.id">
+            <img [src]="slide.img">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Aplicar</a>
+                </div>
+                <div class="card-footer text-muted">
+                    2 days ago
+                </div>
+            </div>
+        </ng-template>
+    </ng-container>
+
+</owl-carousel-o>
