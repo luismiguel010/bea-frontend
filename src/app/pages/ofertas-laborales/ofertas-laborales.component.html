@@ -8,189 +8,25 @@
     <div class="container">
         <div class="row">
             <!-- Team member -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let job of jobs">
                 <div class="image-flip">
                     <div class="mainflip flip-0">
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="assets/amigospenol.png" alt="card image"></p>
-                                    <h4 class="card-title">Programador</h4>
-                                    <p class="card-text">CREAFAM solicita recreacionista.</p>
+                                    <h4 class="card-title">{{job.name}}</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="backside">
                             <div class="card">
                                 <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Programador</h4>
-                                    <p class="card-text">CREAFAM solicita recreacionista
-                                        CREAFAM solicita recreacionista con manejo de personajes para todo los eventos
-                                        que se requieran a la compañía, con
-                                        posibilidad de descanso 2 días a la semana. Sin experiencia, entre 18 a 30 años.
-                                    </p>
+                                    <h4 class="card-title">{{job.name}}</h4>
+                                    <p class="card-text">{{job.description}}</p>
                                     <div style="text-align:center">
-                                        <button type="button" class="btn btn-primary">Aplicar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ./Team member -->
-            <!-- Team member -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/creafam1.png" alt="card image"></p>
-                                    <h4 class="card-title">Mayordomo</h4>
-                                    <p class="card-text">CREAFAM solicita recreacionista.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Mayordomo</h4>
-                                    <p class="card-text">CREAFAM solicita recreacionista
-                                        CREAFAM solicita recreacionista con manejo de personajes para todo los eventos
-                                        que se requieran a la compañía, con
-                                        posibilidad de descanso 2 días a la semana. Sin experiencia, entre 18 a 30 años.
-                                    </p>
-                                    <div style="text-align:center">
-                                        <button type="button" class="btn btn-primary">Aplicar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ./Team member -->
-            <!-- Team member -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/creafam2.png" alt="card image"></p>
-                                    <h4 class="card-title">Secretario</h4>
-                                    <p class="card-text">CREAFAM solicita recreacionista.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Secretario</h4>
-                                    <p class="card-text">CREAFAM solicita recreacionista
-                                        CREAFAM solicita recreacionista con manejo de personajes para todo los eventos
-                                        que se requieran a la compañía, con
-                                        posibilidad de descanso 2 días a la semana. Sin experiencia, entre 18 a 30 años.
-                                    </p>
-                                    <div style="text-align:center">
-                                        <button type="button" class="btn btn-primary">Aplicar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ./Team member -->
-            <!-- Team member -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/maser.png" alt="card image"></p>
-                                    <h4 class="card-title">Electricista</h4>
-                                    <p class="card-text">CREAFAM solicita recreacionista.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Electricista</h4>
-                                    <p class="card-text">CREAFAM solicita recreacionista
-                                        CREAFAM solicita recreacionista con manejo de personajes para todo los eventos
-                                        que se requieran a la compañía, con
-                                        posibilidad de descanso 2 días a la semana. Sin experiencia, entre 18 a 30 años.
-                                    </p>
-                                    <div style="text-align:center">
-                                        <button type="button" class="btn btn-primary">Aplicar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ./Team member -->
-            <!-- Team member -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/todossomos.png" alt="card image"></p>
-                                    <h4 class="card-title">Mayordomo</h4>
-                                    <p class="card-text">CREAFAM solicita recreacionista.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Mayordomo</h4>
-                                    <p class="card-text">CREAFAM solicita recreacionista
-                                        CREAFAM solicita recreacionista con manejo de personajes para todo los eventos
-                                        que se requieran a la compañía, con
-                                        posibilidad de descanso 2 días a la semana. Sin experiencia, entre 18 a 30 años.
-                                    </p>
-                                    <div style="text-align:center">
-                                        <button type="button" class="btn btn-primary">Aplicar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ./Team member -->
-            <!-- Team member -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/todopormigente.png" alt="card image"></p>
-                                    <h4 class="card-title">Administrador</h4>
-                                    <p class="card-text">CREAFAM solicita recreacionista.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Administrador</h4>
-                                    <p class="card-text">CREAFAM solicita recreacionista
-                                        CREAFAM solicita recreacionista con manejo de personajes para todo los eventos
-                                        que se requieran a la compañía, con
-                                        posibilidad de descanso 2 días a la semana. Sin experiencia, entre 18 a 30 años.
-                                    </p>
-                                    <div style="text-align:center">
-                                        <button type="button" class="btn btn-primary">Aplicar</button>
+                                        <button type="button" class="btn btn-primary"
+                                            (click)=openModal()>Aplicar</button>
                                     </div>
                                 </div>
                             </div>

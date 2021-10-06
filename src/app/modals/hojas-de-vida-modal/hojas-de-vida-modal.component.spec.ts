@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HojasDeVidaComponent } from './hojas-de-vida.component';
+import { HojasDeVidaModalComponent } from './hojas-de-vida-modal.component';
 
-describe('HojasDeVidaComponent', () => {
-  let component: HojasDeVidaComponent;
-  let fixture: ComponentFixture<HojasDeVidaComponent>;
+describe('HojasDeVidaModalComponent', () => {
+  let component: HojasDeVidaModalComponent;
+  let fixture: ComponentFixture<HojasDeVidaModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HojasDeVidaComponent ]
+      declarations: [ HojasDeVidaModalComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HojasDeVidaComponent);
+    fixture = TestBed.createComponent(HojasDeVidaModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
