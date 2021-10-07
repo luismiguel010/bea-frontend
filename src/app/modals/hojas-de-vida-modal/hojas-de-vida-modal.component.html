@@ -1,57 +1,59 @@
-<form (ngSubmit)="send()">
-    <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
-        <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
-    </div>
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
+</div>
 
-    <div class="modal-body">
+<div class="modal-body">
+    <form (ngSubmit)="send()">
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Cédula" aria-label="Cédula"
+                    aria-describedby="basic-addon1" [(ngModel)]="user.identificationCard" name="identificationCard">
+            </div>
 
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Nombres" aria-label="Nombres"
+                    aria-describedby="basic-addon1" [(ngModel)]="user.names" name="names">
+            </div>
 
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Cédula" aria-label="Cédula"
-                aria-describedby="basic-addon1" [(ngModel)]="user.identificationCard" name="identificationCard">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos"
+                    aria-describedby="basic-addon1" [(ngModel)]="user.lastnames" name="lastnames">
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Celular" aria-label="Celular"
+                    aria-describedby="basic-addon1" [(ngModel)]="user.phone" name="phone">
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Dirección" aria-label="Dirección"
+                    aria-describedby="basic-addon1" [(ngModel)]="user.address" name="address">
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Correo electrónico" aria-label="Correo electrónico"
+                    aria-describedby="basic-addon1" [(ngModel)]="user.email" name="email">
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Nivel académico" aria-label="Nivel académico"
+                    aria-describedby="basic-addon1" [(ngModel)]="user.academicProfile" name="academicProfile">
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="file" class="form-control" id="inputGroupFile02">
+                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)=modalRef.close()>
+                    Cerrar
+                </button>
+                <button role="button" class="btn btn-primary">Enviar información</button>
+            </div>
+
         </div>
 
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Nombres" aria-label="Nombres"
-                aria-describedby="basic-addon1" [(ngModel)]="user.names" name="names">
-        </div>
+    </form>
 
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos"
-                aria-describedby="basic-addon1" [(ngModel)]="user.lastnames" name="lastnames">
-        </div>
-
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Celular" aria-label="Celular"
-                aria-describedby="basic-addon1" [(ngModel)]="user.phone" name="phone">
-        </div>
-
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Dirección" aria-label="Dirección"
-                aria-describedby="basic-addon1" [(ngModel)]="user.address" name="address">
-        </div>
-
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Correo electrónico" aria-label="Correo electrónico"
-                aria-describedby="basic-addon1" [(ngModel)]="user.email" name="email">
-        </div>
-
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Nivel académico" aria-label="Nivel académico"
-                aria-describedby="basic-addon1" [(ngModel)]="user.academicProfile" name="academicProfile">
-        </div>
-
-        <div class="input-group mb-3">
-            <input type="file" class="form-control" id="inputGroupFile02">
-            <label class="input-group-text" for="inputGroupFile02">Upload</label>
-        </div>
-
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)=modalRef.close()>
-            Cerrar
-        </button>
-        <button type="button" class="btn btn-primary">Enviar información</button>
-    </div>
-</form>
+</div>

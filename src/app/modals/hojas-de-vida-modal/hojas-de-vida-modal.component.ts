@@ -25,7 +25,7 @@ export class HojasDeVidaModalComponent implements OnInit {
     this.modalRef.close(closeMessage)
   }
 
-  send(): void {
+  public send(): void {
     if(this.user.identificationCard == null){
       swal.fire('Error al enviar hoja de vida', 'Campo de cédula vacío', 'error')
       return;
