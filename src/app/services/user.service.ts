@@ -1,4 +1,4 @@
-import { User } from './../modals/hojas-de-vida-modal/user';
+import { User } from '../models/user';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';

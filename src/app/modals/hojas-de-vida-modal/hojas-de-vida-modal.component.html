@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
+    <h5 class="modal-title" id="exampleModalLabel">{{ job.name }}</h5>
     <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
 </div>
 
@@ -42,7 +42,7 @@
             </div>
 
             <div class="input-group mb-3">
-                <input type="file" class="form-control" id="inputGroupFile02">
+                <input type="file" class="form-control" id="inputGroupFile02" [(ngModel)]="file">
                 <label class="input-group-text" for="inputGroupFile02">Upload</label>
             </div>
             <div class="modal-footer">

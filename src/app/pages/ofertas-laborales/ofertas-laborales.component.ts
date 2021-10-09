@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { HojasDeVidaModalComponent } from 'src/app/modals/hojas-de-vida-modal/hojas-de-vida-modal.component';
+import { Job } from 'src/app/models/job';
 import { JobsService } from 'src/app/services/jobs.service';
 
 @Component({
@@ -10,11 +11,11 @@ import { JobsService } from 'src/app/services/jobs.service';
 })
 export class OfertasLaboralesComponent implements OnInit {
 
-  jobs: any[];
+  jobs: Job[];
   modalRef: MdbModalRef<HojasDeVidaModalComponent>;
 
-  constructor(private modalService: MdbModalService, protected jobService: JobsService) {} openModal() {
-    this.modalRef = this.modalService.open(HojasDeVidaModalComponent, { data: { title: 'Datos para registrar hoja de vida' }
+  constructor(private modalService: MdbModalService, protected jobService: JobsService) {} openModal(job: Job) {
+    this.modalRef = this.modalService.open(HojasDeVidaModalComponent, { data: { job }
     });
   }
 

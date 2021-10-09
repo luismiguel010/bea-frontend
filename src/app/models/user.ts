@@ -1,4 +1,5 @@
 export class User{
+    idUser: string;
     identificationCard: string;
     names: string;
     lastnames: string;
