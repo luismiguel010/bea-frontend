@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpRequest } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { GLOBAL_IPS } from './global-ip';
@@ -18,7 +18,16 @@ export class CvService {
   }
 
   save_cv(cv: Cv, file: File): Observable<any>{
-    return this.http.post(this.url_backend + 'cv/save', {cv, file}).pipe(
+    let formdata: FormData = new FormData();
+    const fileData = new Blob([file], {type: "multipart/form-data"})
+    formdata.append('file', fileData);
+    const cvJson = new Blob([JSON.stringify(cv)],{ type: "application/json"});
+    formdata.append('cv', cvJson);
+
+    return this.http.post(this.url_backend + 'cv/save', formdata, {
+      reportProgress: true,
+      observe: 'events'
+    }).pipe(
       catchError(e => {
         return throwError(e);
       })

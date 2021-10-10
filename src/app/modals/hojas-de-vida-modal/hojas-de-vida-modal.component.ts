@@ -9,6 +9,7 @@ import swal from 'sweetalert2';
 import { v4 as uuidv4 } from 'uuid';
 import { Cv } from '../../models/cv';
 import { Job } from 'src/app/models/job';
+import { HttpEvent, HttpEventType } from '@angular/common/http';
 
 @Component({
   selector: 'app-hojas-de-vida-modal',
@@ -17,12 +18,12 @@ import { Job } from 'src/app/models/job';
 })
 export class HojasDeVidaModalComponent implements OnInit {
   job: Job;
-
   public user: User = new User()
   public cv: Cv = new Cv()
   public jobcv: JobCv = new JobCv()
-  jobcvlist: JobCv[]
+  jobcvlist: JobCv[] = new Array()
   file: File;
+  progress: number = 0;
 
   constructor(public modalRef: MdbModalRef<HojasDeVidaModalComponent>,
      private router: Router, private userService: UserService, private cvService: CvService) {
@@ -30,8 +31,7 @@ export class HojasDeVidaModalComponent implements OnInit {
   }
 
   close(): void {
-    const closeMessage = 'Modal closed';
-    this.modalRef.close(closeMessage)
+    this.modalRef.close()
   }
 
   public send(): void {
@@ -64,6 +64,16 @@ export class HojasDeVidaModalComponent implements OnInit {
       return;
     }
     this.user.idUser = uuidv4();
+    this.userService.save_user(this.user)
+    .subscribe(responde => {
+      this.ngOnInit();
+      },err => {
+        if(err.status == 500){
+          swal.fire('Error al registrar usuario', 'Es posible que la cédula ya exista', 'error')
+        }
+      }
+    );
+        //CV
     this.cv.idCv = uuidv4();
     this.cv.idUser = this.user.idUser;
     this.cv.directoryFile = this.job.name;
@@ -72,24 +82,34 @@ export class HojasDeVidaModalComponent implements OnInit {
     this.jobcv.idJob = this.job.idJob;
     this.jobcvlist.push(this.jobcv);
     this.cv.jobCvList = this.jobcvlist;
-    this.userService.save_user(this.user)
-    .subscribe(responde => {
-      //this.router.navigate(['/users'])
-      swal.fire('Usuario registrado', 'Usuario registrado con éxito', 'success')
-      this.ngOnInit();
-      },err => {
-        if(err.status == 500){
-          swal.fire('Error al registrar usuario', 'Es posible que la cédula ya exista', 'error')
-        }
-      }
-    );
+    console.log(this.user)
+    console.log(this.cv)
     this.cvService.save_cv(this.cv, this.file)
-    .subscribe(responde => {
-      swal.fire('Hoja de vida cargada', 'Hoja de vida cargada con éxito', 'success')
+    .subscribe((event: HttpEvent<any>) => {
+    switch (event.type) {
+            case HttpEventType.Sent:
+              console.log('Request has been made!');
+              break;
+            case HttpEventType.ResponseHeader:
+              console.log('Response header has been received!');
+              break;
+            case HttpEventType.UploadProgress:
+              const total: number = event.total!;  
+              this.progress = Math.round(event.loaded / total);
+              console.log(`Uploaded! ${this.progress}%`);
+              break;
+            case HttpEventType.Response:
+              close()
+              console.log('User successfully created!', event.body);
+              swal.fire('Usuario registrado', 'Usuario registrado con éxito', 'success')
+              setTimeout(() => {
+                this.progress = 0;
+              }, 1500);
+          }
       this.ngOnInit();
     }, err => {
         if(err.status == 500){
-          swal.fire('Error al carga hoja de vida', 'Es posible que la hoja de vida ya exista', 'error')
+          swal.fire('Error al cargar hoja de vida', 'Consulte al administrador', 'error')
         }
     });
 
