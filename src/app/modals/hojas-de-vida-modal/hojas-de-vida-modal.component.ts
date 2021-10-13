@@ -1,3 +1,4 @@
+import { DownloadFormatoService } from './../../services/download-formato.service';
 import { CvService } from './../../services/cv.service';
 import { JobCv } from './../../models/jobcv';
 import { UserService } from './../../services/user.service';
@@ -11,6 +12,7 @@ import { Cv } from '../../models/cv';
 import { Job } from 'src/app/models/job';
 import { HttpEvent, HttpEventType } from '@angular/common/http';
 import Swal from 'sweetalert2';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-hojas-de-vida-modal',
@@ -27,8 +29,7 @@ export class HojasDeVidaModalComponent implements OnInit {
   selectedFiles?: FileList;
   file?: File;
 
-  constructor(public modalRef: MdbModalRef<HojasDeVidaModalComponent>,
-    private router: Router, private userService: UserService, private cvService: CvService) {
+  constructor(public modalRef: MdbModalRef<HojasDeVidaModalComponent>, private userService: UserService, private cvService: CvService, private downloadFormatoService: DownloadFormatoService) {
 
   }
 
@@ -38,6 +39,21 @@ export class HojasDeVidaModalComponent implements OnInit {
 
   close(): void {
     this.modalRef.close()
+  }
+
+  downloadFormato(): void {
+    this.downloadFormatoService.download().subscribe(
+      (blob) => {
+        saveAs(blob, "Formato Hoja de Vida.xlsx")
+      },
+      (error) => {
+        swal.fire('Error descargando el formato de hoja de vida', 'Consulto al administrador', 'error')
+      }
+    )
+  }
+
+  refresh(): void {
+    window.location.reload();
   }
 
   public send(): void {
