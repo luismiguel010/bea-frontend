@@ -14,12 +14,16 @@ import { FooterComponent } from './footer/footer.component';
 import { OfertasLaboralesComponent } from './pages/ofertas-laborales/ofertas-laborales.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { HojasDeVidaModalComponent } from './modals/hojas-de-vida-modal/hojas-de-vida-modal.component';
+import { InformacionInstitucionalComponent } from './pages/informacion-institucional/informacion-institucional.component';
+import { ContactenosComponent } from './pages/contactenos/contactenos.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/', pathMatch: 'full'},
-  {path: '', component: InicioComponent},
-  {path: 'ofertas', component: OfertasLaboralesComponent},
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', component: InicioComponent },
+  { path: 'ofertas', component: OfertasLaboralesComponent },
+  { path: 'informacion', component: InformacionInstitucionalComponent },
+  { path: 'contactenos', component: ContactenosComponent },
 ];
 
 @NgModule({
@@ -29,7 +33,9 @@ const routes: Routes = [
     FooterComponent,
     OfertasLaboralesComponent,
     InicioComponent,
-    HojasDeVidaModalComponent
+    HojasDeVidaModalComponent,
+    InformacionInstitucionalComponent,
+    ContactenosComponent
   ],
   imports: [
     BrowserModule,
