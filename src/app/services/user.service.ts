@@ -1,10 +1,10 @@
-import { User } from '../models/user';
+import { User } from './../models/user';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { GLOBAL_IPS } from './global-ip';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -13,15 +13,22 @@ export class UserService {
 
   public url_backend: string;
 
-  constructor(protected http: HttpClient, private router: Router) { 
-    this.url_backend = GLOBAL_IPS.url_backend;
+  constructor(protected http: HttpClient, private router: Router) {
   }
 
-  save_user(user: User): Observable<any>{
-    return this.http.post(this.url_backend + 'user/save', user).pipe(
+  save_user(user: User): Observable<User> {
+    return this.http.post<User>(environment.url_backend + 'user/save', user).pipe(
       catchError(e => {
         return throwError(e);
       })
     );
+  }
+
+  get_user_by_id(id: string): Observable<User> {
+    return this.http.get<User>(environment.url_backend + 'user/getById/' + id).pipe(
+      catchError(e => {
+        return throwError(e);
+      })
+    )
   }
 }
