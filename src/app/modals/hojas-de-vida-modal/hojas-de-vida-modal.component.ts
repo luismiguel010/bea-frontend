@@ -5,13 +5,11 @@ import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
-import { Router } from '@angular/router';
 import swal from 'sweetalert2';
 import { v4 as uuidv4 } from 'uuid';
 import { Cv } from '../../models/cv';
 import { Job } from 'src/app/models/job';
 import { HttpEvent, HttpEventType } from '@angular/common/http';
-import Swal from 'sweetalert2';
 import { saveAs } from 'file-saver';
 import { NivelAcademico } from '../../enums/nivel-academico';
 
