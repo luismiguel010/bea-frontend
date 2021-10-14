@@ -13,6 +13,7 @@ import { Job } from 'src/app/models/job';
 import { HttpEvent, HttpEventType } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import { saveAs } from 'file-saver';
+import { NivelAcademico } from '../../enums/nivel-academico';
 
 @Component({
   selector: 'app-hojas-de-vida-modal',
@@ -56,6 +57,10 @@ export class HojasDeVidaModalComponent implements OnInit {
     window.location.reload();
   }
 
+  getNivelAcademicoValue(number: number): any {
+    return NivelAcademico[number - 1];
+  }
+
   public send(): void {
     if (this.user.identificationCard == null) {
       swal.fire('Error al enviar hoja de vida', 'Campo de cédula vacío', 'error')
@@ -89,6 +94,7 @@ export class HojasDeVidaModalComponent implements OnInit {
       const file: File | null = this.selectedFiles.item(0);
       if (file) {
         this.user.idUser = uuidv4();
+        this.user.academicProfile = this.getNivelAcademicoValue(Number(this.user.academicProfile));
         this.userService.save_user(this.user)
           .subscribe(response => {
             // Obtener ID Usuario

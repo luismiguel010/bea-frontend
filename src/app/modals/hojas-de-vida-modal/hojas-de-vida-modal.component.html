@@ -42,8 +42,18 @@
             </div>
 
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Nivel académico" aria-label="Nivel académico"
-                    aria-describedby="basic-addon1" [(ngModel)]="user.academicProfile" name="academicProfile">
+                <!-- <input type="text" class="form-control" placeholder="Nivel académico" aria-label="Nivel académico"
+                    aria-describedby="basic-addon1" [(ngModel)]="user.academicProfile" name="academicProfile"> -->
+                <select class="form-select" placeholder="Seleccione el nivel académico"
+                    aria-label="Default select example" aria-describedby="basic-addon1"
+                    [(ngModel)]="user.academicProfile" name="academicProfile">
+                    <option value="1">Escuela</option>
+                    <option value="2">Bachillerato</option>
+                    <option value="3">Pregrado</option>
+                    <option value="4">Especialista</option>
+                    <option value="5">Postgrado</option>
+                    <option value="6">Doctorado</option>
+                </select>
             </div>
 
             <div class="input-group mb-3">
