@@ -99,15 +99,12 @@ export class HojasDeVidaModalComponent implements OnInit {
             //CV
             this.cv.idCv = uuidv4();
             this.cv.idUser = response.idUser;
-            console.log(this.cv.idUser);
             this.cv.directoryFile = this.job.name;
             this.cv.dateReceived = new Date;
             this.jobcv.idCv = this.cv.idCv;
             this.jobcv.idJob = this.job.idJob;
             this.jobcvlist.push(this.jobcv);
             this.cv.jobCvList = this.jobcvlist;
-            console.log(this.user)
-            console.log(this.cv)
 
             this.file = file;
             this.cvService.save_cv(this.cv, file)
