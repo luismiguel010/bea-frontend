@@ -9,13 +9,13 @@
         <div class="row">
             <!-- Team member -->
             <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let job of jobs">
-                <div class="image-flip">
+                <div class="image-flip" *ngIf="job.state">
                     <div class="mainflip flip-0">
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/amigospenol.png" alt="card image"></p>
                                     <h4 class="card-title">{{job.name}}</h4>
+                                    <p class="card-text">{{job.description}}</p>
                                 </div>
                             </div>
                         </div>
@@ -23,10 +23,9 @@
                             <div class="card">
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">{{job.name}}</h4>
-                                    <p class="card-text">{{job.description}}</p>
                                     <div style="text-align:center">
-                                        <button type="button" class="btn btn-primary"
-                                            (click)=openModal(job)>Aplicar</button>
+                                        <button type="button" class="btn btn-primary" (click)=openModal(job)>Llenar
+                                            formulario para aplicar</button>
                                     </div>
                                 </div>
                             </div>
