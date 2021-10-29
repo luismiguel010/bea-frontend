@@ -7,6 +7,7 @@ import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -45,6 +46,7 @@ const routes: Routes = [
     MdbModalModule,
     HttpClientModule,
     FormsModule,
+    NgbModule
   ],
   exports: [RouterModule],
   providers: [JobsService],
