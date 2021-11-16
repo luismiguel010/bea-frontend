@@ -57,6 +57,13 @@
             </div>
 
             <div class="input-group mb-3">
+                <select class="form-select" placeholder="Seleccione la profesión" aria-label="Default select example"
+                    aria-describedby="basic-addon1" [(ngModel)]="user.profession" name=" profession">
+                    <option *ngFor="let profession of professions_array">{{profession}}</option>
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
                 <button class="form-control" type="button" id="inputGroupFile02" (click)="downloadFormato()">Descargar
                     formato</button>
                 <input type="file" class="form-control" id="inputGroupFile02" (change)="selectFile($event)" name="file">

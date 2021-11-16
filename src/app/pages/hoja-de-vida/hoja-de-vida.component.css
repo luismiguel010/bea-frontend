@@ -1,0 +1,29 @@
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #108d6f;
+  border-color: #108d6f;
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007b5e;
+  border-color: #007b5e;
+  margin: 0 auto;
+  display: block;
+}
+
+.title {
+  color: #007b5e;
+  margin: auto;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.info {
+  color: grey;
+  margin: auto;
+  vertical-align: middle;
+  text-align: center;
+}

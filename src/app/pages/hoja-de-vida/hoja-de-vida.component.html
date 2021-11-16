@@ -1,0 +1,96 @@
+<p></p>
+
+<div>
+    <h1 class='title'>¿Qué esperas para animarte a llenar tu curriculum?</h1>
+</div>
+
+<p></p>
+
+<div>
+    <p class='info'>Nota: BEA es un centro de servicios, información, oferta y demanda laboral, no olvides llenar todos
+        los espacios y
+        recuerda que hay unos ítems de obligatorio cumplimiento.</p>
+</div>
+
+<p></p>
+
+<div class="card">
+    <div class="card-body">
+        <div class="modal-body">
+            <form (ngSubmit)="send()">
+                <!-- Progress Bar -->
+                <div class="progress form-group" *ngIf="progress > 0">
+                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                        [style.width.%]="progress">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Cédula" aria-label="Cédula"
+                            aria-describedby="basic-addon1" [(ngModel)]="user.identificationCard"
+                            name="identificationCard">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Nombres" aria-label="Nombres"
+                            aria-describedby="basic-addon1" [(ngModel)]="user.names" name="names">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos"
+                            aria-describedby="basic-addon1" [(ngModel)]="user.lastnames" name="lastnames">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Celular" aria-label="Celular"
+                            aria-describedby="basic-addon1" [(ngModel)]="user.phone" name="phone">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Dirección" aria-label="Dirección"
+                            aria-describedby="basic-addon1" [(ngModel)]="user.address" name="address">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Correo electrónico"
+                            aria-label="Correo electrónico" aria-describedby="basic-addon1" [(ngModel)]="user.email"
+                            name="email">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <select class="form-select" [(ngModel)]="user.academicProfile" name="academicProfile">
+                            <option value="" disabled selected hidden>Select a value</option>
+                            <option value="1">Escuela</option>
+                            <option value="2">Bachillerato</option>
+                            <option value="3">Pregrado</option>
+                            <option value="4">Especialista</option>
+                            <option value="5">Postgrado</option>
+                            <option value="6">Doctorado</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <select class="form-select" placeholder="Seleccione la profesión"
+                            aria-label="Default select example" aria-describedby="basic-addon1"
+                            [(ngModel)]="user.profession" name="profession">
+                            <option *ngFor="let profession of professions_array">{{profession}}</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <button class="form-control" type="button" id="inputGroupFile02"
+                            (click)="downloadFormato()">Descargar
+                            formato</button>
+                        <input type="file" class="form-control" id="inputGroupFile02" (change)="selectFile($event)"
+                            name="file">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button role="button" class="btn btn-primary">Enviar información</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

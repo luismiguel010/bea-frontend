@@ -1,9 +1,9 @@
+import { Component, OnInit } from '@angular/core';
 import { Professions } from './../../enums/professions';
 import { DownloadFormatoService } from './../../services/download-formato.service';
 import { CvService } from './../../services/cv.service';
 import { JobCv } from './../../models/jobcv';
 import { UserService } from './../../services/user.service';
-import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import swal from 'sweetalert2';
@@ -15,11 +15,11 @@ import { saveAs } from 'file-saver';
 import { NivelAcademico } from '../../enums/nivel-academico';
 
 @Component({
-  selector: 'app-hojas-de-vida-modal',
-  templateUrl: './hojas-de-vida-modal.component.html',
-  styleUrls: ['./hojas-de-vida-modal.component.css']
+  selector: 'app-hoja-de-vida',
+  templateUrl: './hoja-de-vida.component.html',
+  styleUrls: ['./hoja-de-vida.component.css']
 })
-export class HojasDeVidaModalComponent implements OnInit {
+export class HojaDeVidaComponent implements OnInit {
   job: Job;
   public user: User = new User()
   public cv: Cv = new Cv()
@@ -29,18 +29,11 @@ export class HojasDeVidaModalComponent implements OnInit {
   selectedFiles?: FileList;
   file?: File;
   professions_array: string[] = new Array();
-  newProfession: string;
 
-  constructor(public modalRef: MdbModalRef<HojasDeVidaModalComponent>, private userService: UserService, private cvService: CvService, private downloadFormatoService: DownloadFormatoService) {
-
-  }
+  constructor(private userService: UserService, private cvService: CvService, private downloadFormatoService: DownloadFormatoService) { }
 
   selectFile(event: any) {
     this.selectedFiles = event.target.files;
-  }
-
-  close(): void {
-    this.modalRef.close()
   }
 
   downloadFormato(): void {
@@ -91,10 +84,6 @@ export class HojasDeVidaModalComponent implements OnInit {
       swal.fire('Error al enviar hoja de vida', 'Campo de nivel académico vacío', 'error')
       return;
     }
-    if (this.user.profession == null) {
-      swal.fire('Error al enviar hoja de vida', 'Campo de nivel profesión vacío', 'error')
-      return;
-    }
     if (this.selectedFiles) {
       const file: File | null = this.selectedFiles.item(0);
       if (file) {
@@ -106,10 +95,10 @@ export class HojasDeVidaModalComponent implements OnInit {
             //CV
             this.cv.idCv = uuidv4();
             this.cv.idUser = response.idUser;
-            this.cv.directoryFile = this.job.name;
+            this.cv.directoryFile = 'Otros';
             this.cv.dateReceived = new Date;
             this.jobcv.idCv = this.cv.idCv;
-            this.jobcv.idJob = this.job.idJob;
+            this.jobcv.idJob = '68cdcc29-09ea-4ac4-9f04-737a9b7a0ca6';
             this.jobcvlist.push(this.jobcv);
             this.cv.jobCvList = this.jobcvlist;
 
@@ -160,8 +149,8 @@ export class HojasDeVidaModalComponent implements OnInit {
     }
   }
 
-  addProfession(): void {
-    console.log('add new profession')
+  addProfession(newProfession: string): void {
+    this.professions_array.push(newProfession);
   }
 
   ngOnInit(): void {
@@ -169,5 +158,3 @@ export class HojasDeVidaModalComponent implements OnInit {
   }
 
 }
-
-

@@ -1,4 +1,4 @@
-export class User{
+export class User {
     idUser: string;
     identificationCard: string;
     names: string;
@@ -7,4 +7,5 @@ export class User{
     address: string;
     email: string;
     academicProfile: string;
+    profession: string;
 }

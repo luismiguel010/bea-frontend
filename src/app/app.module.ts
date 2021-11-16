@@ -17,6 +17,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { HojasDeVidaModalComponent } from './modals/hojas-de-vida-modal/hojas-de-vida-modal.component';
 import { InformacionInstitucionalComponent } from './pages/informacion-institucional/informacion-institucional.component';
 import { ContactenosComponent } from './pages/contactenos/contactenos.component';
+import { HojaDeVidaComponent } from './pages/hoja-de-vida/hoja-de-vida.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'ofertas', component: OfertasLaboralesComponent },
   { path: 'informacion', component: InformacionInstitucionalComponent },
   { path: 'contactenos', component: ContactenosComponent },
+  { path: 'hojadevida', component: HojaDeVidaComponent }
 ];
 
 @NgModule({
@@ -36,7 +38,8 @@ const routes: Routes = [
     InicioComponent,
     HojasDeVidaModalComponent,
     InformacionInstitucionalComponent,
-    ContactenosComponent
+    ContactenosComponent,
+    HojaDeVidaComponent
   ],
   imports: [
     BrowserModule,
