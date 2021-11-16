@@ -64,6 +64,12 @@
             </div>
 
             <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1"
+                    [(ngModel)]="newProfession" name="newProfession">
+                <p class="infoprofession">Llene este campo en caso de que su elección en la profesión sea Otro.</p>
+            </div>
+
+            <div class="input-group mb-3">
                 <button class="form-control" type="button" id="inputGroupFile02" (click)="downloadFormato()">Descargar
                     formato</button>
                 <input type="file" class="form-control" id="inputGroupFile02" (change)="selectFile($event)" name="file">

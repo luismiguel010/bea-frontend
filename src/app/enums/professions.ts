@@ -81,4 +81,5 @@ export enum Professions {
     Traductor = 'Traductor',
     Vendedor = 'Vendedor',
     Veterinario = 'Veterinario',
+    Otro = 'Otro'
 }

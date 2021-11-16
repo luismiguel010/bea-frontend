@@ -95,11 +95,18 @@ export class HojasDeVidaModalComponent implements OnInit {
       swal.fire('Error al enviar hoja de vida', 'Campo de nivel profesión vacío', 'error')
       return;
     }
+    if (this.user.profession == 'Otro' && this.newProfession == null) {
+      swal.fire('Error al enviar hoja de vida', 'Si ha seleccionado en la profesión la opción de Otro, indique en el espacio inferior la profesión', 'error')
+      return;
+    }
     if (this.selectedFiles) {
       const file: File | null = this.selectedFiles.item(0);
       if (file) {
         this.user.idUser = uuidv4();
         this.user.academicProfile = this.getNivelAcademicoValue(Number(this.user.academicProfile));
+        if (this.user.profession == 'Otro') {
+          this.user.profession = this.newProfession;
+        }
         this.userService.save_user(this.user)
           .subscribe(response => {
             // Obtener ID Usuario
