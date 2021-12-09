@@ -1,5 +1,5 @@
 import { JobsService } from './services/jobs.service';
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -8,6 +8,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SliderModule } from 'angular-image-slider';
+import { createCustomElement } from '@angular/elements';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -49,10 +51,19 @@ const routes: Routes = [
     MdbModalModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    SliderModule
   ],
+  entryComponents: [InicioComponent],
   exports: [RouterModule],
   providers: [JobsService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector: Injector) {
+    const slider = createCustomElement(InicioComponent, { injector });
+    customElements.define('motley-slider', slider);
+  }
+
+  ngDoBootstrap() { }
+}
