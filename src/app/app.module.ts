@@ -41,7 +41,7 @@ const routes: Routes = [
     HojasDeVidaModalComponent,
     InformacionInstitucionalComponent,
     ContactenosComponent,
-    HojaDeVidaComponent
+    HojaDeVidaComponent,
   ],
   imports: [
     BrowserModule,
