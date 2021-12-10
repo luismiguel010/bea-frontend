@@ -17,10 +17,10 @@ export class InicioComponent implements OnInit {
   constructor(private dataImageService: DataImagesService) {
     this.sliderArray = [
       { img: '../../assets/inicio1.jpg', alt: '', text: 'Da a conocer tus habilidades' },
-      { img: '../../assets/inicio2.jpg', alt: '', text: 'Envíanos tus datos' },
-      { img: '../../assets/inicio3.jpg', alt: '', text: 'Te ayudamos a conseguirlo' },
+      { img: '../../assets/inicio2.jpg', alt: '', text: 'Envíanos tu hoja de vida' },
+      { img: '../../assets/inicio3.jpg', alt: '', text: 'Te ayudamos a conseguir' },
       { img: '../../assets/inicio4.jpg', alt: '', text: 'El trabajo soñado' },
-      { img: '../../assets/inicio5.jpg', alt: '', text: 'En tu pueblo' }
+      { img: '../../assets/inicio5.jpg', alt: '', text: 'Y el trabajo que mereces' }
 
     ];
     this.selectedIndex = 0;
