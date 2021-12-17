@@ -5,7 +5,7 @@ import { JobCv } from './../../models/jobcv';
 import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
-import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
+import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import swal from 'sweetalert2';
 import { v4 as uuidv4 } from 'uuid';
 import { Cv } from '../../models/cv';
@@ -13,6 +13,7 @@ import { Job } from 'src/app/models/job';
 import { HttpEvent, HttpEventType } from '@angular/common/http';
 import { saveAs } from 'file-saver';
 import { NivelAcademico } from '../../enums/nivel-academico';
+import { TerminosCondicionesComponent } from 'src/app/modals/terminos-condiciones/terminos-condiciones.component';
 
 @Component({
   selector: 'app-hojas-de-vida-modal',
@@ -30,9 +31,18 @@ export class HojasDeVidaModalComponent implements OnInit {
   file?: File;
   professions_array: string[] = new Array();
   newProfession: string;
+  modalRefTerminos: MdbModalRef<TerminosCondicionesComponent>;
+  isChecked: boolean;
 
-  constructor(public modalRef: MdbModalRef<HojasDeVidaModalComponent>, private userService: UserService, private cvService: CvService, private downloadFormatoService: DownloadFormatoService) {
+  constructor(public modalRef: MdbModalRef<HojasDeVidaModalComponent>,
+    private userService: UserService, private cvService: CvService,
+    private downloadFormatoService: DownloadFormatoService,
+    private modalService: MdbModalService) {
 
+  }
+
+  openModalTerminos() {
+    this.modalRefTerminos = this.modalService.open(TerminosCondicionesComponent, {});
   }
 
   selectFile(event: any) {
@@ -56,6 +66,10 @@ export class HojasDeVidaModalComponent implements OnInit {
 
   refresh(): void {
     window.location.reload();
+  }
+
+  checkCheckBoxvalue() {
+    this.isChecked = !this.isChecked
   }
 
   getNivelAcademicoValue(number: number): any {
@@ -97,6 +111,10 @@ export class HojasDeVidaModalComponent implements OnInit {
     }
     if (this.user.profession == 'Otro' && this.newProfession == null) {
       swal.fire('Error al enviar hoja de vida', 'Si ha seleccionado en la profesión la opción de Otro, indique en el espacio inferior la profesión', 'error')
+      return;
+    }
+    if (!this.isChecked) {
+      swal.fire('Error al enviar sus datos', 'Debe aceptar los términos y condiciones', 'error')
       return;
     }
     if (this.selectedFiles) {

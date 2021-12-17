@@ -20,6 +20,7 @@ import { HojasDeVidaModalComponent } from './modals/hojas-de-vida-modal/hojas-de
 import { InformacionInstitucionalComponent } from './pages/informacion-institucional/informacion-institucional.component';
 import { ContactenosComponent } from './pages/contactenos/contactenos.component';
 import { HojaDeVidaComponent } from './pages/hoja-de-vida/hoja-de-vida.component';
+import { TerminosCondicionesComponent } from './modals/terminos-condiciones/terminos-condiciones.component';
 
 
 const routes: Routes = [
@@ -42,6 +43,7 @@ const routes: Routes = [
     InformacionInstitucionalComponent,
     ContactenosComponent,
     HojaDeVidaComponent,
+    TerminosCondicionesComponent,
   ],
   imports: [
     BrowserModule,

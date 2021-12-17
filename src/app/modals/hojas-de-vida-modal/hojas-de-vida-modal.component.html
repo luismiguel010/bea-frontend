@@ -69,6 +69,8 @@
                 <p class="infoprofession">Llene este campo en caso de que su elección en la profesión sea Otro.</p>
             </div>
 
+
+
             <div class="input-group mb-3">
                 <button class="form-control" type="button" id="inputGroupFile02" (click)="downloadFormato()">Descargar
                     formato</button>
@@ -84,5 +86,10 @@
         </div>
 
     </form>
+
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" (change)="checkCheckBoxvalue()">
+        <button class="astext" (click)=openModalTerminos()>Aceptar Términos y condiciones</button>
+    </div>
 
 </div>
