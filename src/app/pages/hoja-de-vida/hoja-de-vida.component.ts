@@ -30,9 +30,11 @@ export class HojaDeVidaComponent implements OnInit {
   selectedFiles?: FileList;
   file?: File;
   professions_array: string[] = new Array();
+  academic_profile_array: string[] = new Array();
   newProfession: string;
   modalRefTerminos: MdbModalRef<TerminosCondicionesComponent>;
   isChecked: boolean;
+
 
   constructor(private userService: UserService, private cvService: CvService,
     private downloadFormatoService: DownloadFormatoService,
@@ -110,7 +112,6 @@ export class HojaDeVidaComponent implements OnInit {
       const file: File | null = this.selectedFiles.item(0);
       if (file) {
         this.user.idUser = uuidv4();
-        this.user.academicProfile = this.getNivelAcademicoValue(Number(this.user.academicProfile));
         if (this.user.profession == 'Otro') {
           this.user.profession = this.newProfession;
         }
@@ -179,6 +180,7 @@ export class HojaDeVidaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.academic_profile_array = Object.values(NivelAcademico);
     this.professions_array = Object.values(Professions);
   }
 

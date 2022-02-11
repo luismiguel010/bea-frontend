@@ -58,18 +58,21 @@
                     </div>
 
                     <div class="input-group mb-3">
-                        <select class="form-select" [(ngModel)]="user.academicProfile" name="academicProfile">
-                            <option value="" disabled selected hidden>Select a value</option>
-                            <option value="1">Escuela</option>
-                            <option value="2">Bachillerato</option>
-                            <option value="3">Pregrado</option>
-                            <option value="4">Especialista</option>
-                            <option value="5">Postgrado</option>
-                            <option value="6">Doctorado</option>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Nivel académico</span>
+                        </div>
+                        <select class="form-select" placeholder="Seleccione el nivel académico"
+                            aria-label="Default select example" aria-describedby="basic-addon1"
+                            [(ngModel)]="user.academicProfile" name="academicProfile">
+                            <option *ngFor="let academicProfile of academic_profile_array" value="{{academicProfile}}">
+                                {{academicProfile}}</option>
                         </select>
                     </div>
 
                     <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Profesión</span>
+                        </div>
                         <select class="form-select" placeholder="Seleccione la profesión"
                             aria-label="Default select example" aria-describedby="basic-addon1"
                             [(ngModel)]="user.profession" name="profession">
