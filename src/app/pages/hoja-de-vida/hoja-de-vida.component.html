@@ -26,12 +26,6 @@
                 </div>
                 <div class="form-group">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Cédula" aria-label="Cédula"
-                            aria-describedby="basic-addon1" [(ngModel)]="user.identificationCard"
-                            name="identificationCard">
-                    </div>
-
-                    <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Nombres" aria-label="Nombres"
                             aria-describedby="basic-addon1" [(ngModel)]="user.names" name="names">
                     </div>
@@ -42,13 +36,19 @@
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Celular" aria-label="Celular"
-                            aria-describedby="basic-addon1" [(ngModel)]="user.phone" name="phone">
+                        <input type="text" class="form-control" placeholder="Cédula" aria-label="Cédula"
+                            aria-describedby="basic-addon1" [(ngModel)]="user.identificationCard"
+                            name="identificationCard">
                     </div>
 
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Dirección" aria-label="Dirección"
                             aria-describedby="basic-addon1" [(ngModel)]="user.address" name="address">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Celular" aria-label="Celular"
+                            aria-describedby="basic-addon1" [(ngModel)]="user.phone" name="phone">
                     </div>
 
                     <div class="input-group mb-3">
@@ -59,7 +59,7 @@
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Nivel académico</span>
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Nivel de estudio</span>
                         </div>
                         <select class="form-select" placeholder="Seleccione el nivel académico"
                             aria-label="Default select example" aria-describedby="basic-addon1"
@@ -71,7 +71,8 @@
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Profesión</span>
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Profesión, ocupación u
+                                oficio</span>
                         </div>
                         <select class="form-select" placeholder="Seleccione la profesión"
                             aria-label="Default select example" aria-describedby="basic-addon1"
@@ -81,11 +82,11 @@
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="" aria-label=""
-                            aria-describedby="basic-addon1" [(ngModel)]="newProfession" name="newProfession">
+                        <input type="text" class="form-control"
+                            placeholder="Otra ocupación. Llene este campo en caso de que su elección en la profesión sea Otro."
+                            aria-label="" aria-describedby="basic-addon1" [(ngModel)]="newProfession"
+                            name="newProfession">
                     </div>
-                    <p class="infoprofession">Llene este campo en caso de que su elección en la profesión sea Otro.
-                    </p>
 
                     <div class="input-group mb-3">
                         <input type="file" class="form-control" id="inputGroupFile02" (change)="selectFile($event)"
