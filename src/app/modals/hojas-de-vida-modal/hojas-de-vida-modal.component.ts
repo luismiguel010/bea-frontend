@@ -30,6 +30,7 @@ export class HojasDeVidaModalComponent implements OnInit {
   selectedFiles?: FileList;
   file?: File;
   professions_array: string[] = new Array();
+  academic_profile_array: string[] = new Array();
   newProfession: string;
   modalRefTerminos: MdbModalRef<TerminosCondicionesComponent>;
   isChecked: boolean;
@@ -70,10 +71,6 @@ export class HojasDeVidaModalComponent implements OnInit {
 
   checkCheckBoxvalue() {
     this.isChecked = !this.isChecked
-  }
-
-  getNivelAcademicoValue(number: number): any {
-    return NivelAcademico[number - 1];
   }
 
   public send(): void {
@@ -121,7 +118,6 @@ export class HojasDeVidaModalComponent implements OnInit {
       const file: File | null = this.selectedFiles.item(0);
       if (file) {
         this.user.idUser = uuidv4();
-        this.user.academicProfile = this.getNivelAcademicoValue(Number(this.user.academicProfile));
         if (this.user.profession == 'Otro') {
           this.user.profession = this.newProfession;
         }
@@ -185,11 +181,8 @@ export class HojasDeVidaModalComponent implements OnInit {
     }
   }
 
-  addProfession(): void {
-    console.log('add new profession')
-  }
-
   ngOnInit(): void {
+    this.academic_profile_array = Object.values(NivelAcademico);
     this.professions_array = Object.values(Professions);
   }
 
