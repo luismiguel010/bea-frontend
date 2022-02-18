@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { HojasDeVidaModalComponent } from 'src/app/modals/hojas-de-vida-modal/hojas-de-vida-modal.component';
 import { TerminosCondicionesComponent } from 'src/app/modals/terminos-condiciones/terminos-condiciones.component';
@@ -15,6 +15,7 @@ export class OfertasLaboralesComponent implements OnInit {
   jobs: Job[];
   modalRef: MdbModalRef<HojasDeVidaModalComponent>;
   modalRefTerminos: MdbModalRef<TerminosCondicionesComponent>;
+  @Output() buttonClicked = new EventEmitter();
 
   constructor(private modalService: MdbModalService, protected jobService: JobsService) {
 

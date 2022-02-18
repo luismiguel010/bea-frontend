@@ -15,7 +15,9 @@
                             <div class="card">
                                 <div class="card-body text-center">
                                     <h4 class="card-title">{{job.name}}</h4>
-                                    <p class="card-text">{{job.description}}</p>
+                                    <p class="card-text">Fecha de apertura: {{job.dateInit}}</p>
+                                    <p class="card-text">Fecha de vencimiento: {{job.dateFinish}}</p>
+                                    <p class="card-text">Empresa: {{job.company}}</p>
                                 </div>
                             </div>
                         </div>
@@ -23,6 +25,10 @@
                             <div class="card">
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">{{job.name}}</h4>
+                                    <div style="text-align:center"><button type="button"
+                                            [routerLink]="['/description-job', job.idJob]" class="btn btn-primary">Ver
+                                            más</button></div>
+                                    <p></p>
                                     <div style="text-align:center">
                                         <button type="button" class="btn btn-primary" (click)=openModal(job)>Llenar
                                             formulario para aplicar</button>

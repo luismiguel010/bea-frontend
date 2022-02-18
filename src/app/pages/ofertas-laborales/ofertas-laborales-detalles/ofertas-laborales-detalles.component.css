@@ -1,0 +1,58 @@
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #0e1d42;
+  border-color: #0e1d42;
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #0e1d42;
+  border-color: #0e1d42;
+  margin: 0 auto;
+  display: block;
+}
+
+.title {
+  color: #0e1d42;
+  margin: auto;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.info {
+  color: grey;
+  margin: auto;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.infoprofession {
+  color: grey;
+}
+
+.astext {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn-secundary:hover,
+.btn-secundary:focus {
+  background-color: #0e1d42;
+  border-color: #0e1d42;
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-secundary {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  color: #fff;
+  background-color: grey;
+  border-color: grey;
+}
