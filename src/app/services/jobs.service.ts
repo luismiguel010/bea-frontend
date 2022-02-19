@@ -1,3 +1,4 @@
+import { Job } from 'src/app/models/job';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
@@ -21,5 +22,13 @@ export class JobsService {
         return throwError(e);
       })
     );
+  }
+
+  getJobById(idJob: string): Observable<Job> {
+    return this.http.get<Job>(environment.url_backend + 'job/getById/' + idJob).pipe(
+      catchError(e => {
+        return throwError(e);
+      })
+    )
   }
 }

@@ -15,8 +15,9 @@
                             <div class="card">
                                 <div class="card-body text-center">
                                     <h4 class="card-title">{{job.name}}</h4>
-                                    <p class="card-text">Fecha de apertura: {{job.dateInit}}</p>
-                                    <p class="card-text">Fecha de vencimiento: {{job.dateFinish}}</p>
+                                    <p class="card-text">Fecha de publicación: {{job.dateInit | date:'dd/MM/yyyy'}}</p>
+                                    <p class="card-text">Fecha de vencimiento: {{job.dateFinish | date:'dd/MM/yyyy'}}
+                                    </p>
                                     <p class="card-text">Empresa: {{job.company}}</p>
                                 </div>
                             </div>

@@ -15,8 +15,8 @@
 <div class="card">
     <div class="card-body">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Fecha de apertura: {{job.dateInit}}</li>
-            <li class="list-group-item">Fecha de vencimiento: {{job.dateFinish}}</li>
+            <li class="list-group-item">Fecha de publicación: {{job.dateInit | date:'dd/MM/yyyy'}}</li>
+            <li class="list-group-item">Fecha de vencimiento: {{job.dateFinish | date:'dd/MM/yyyy'}}</li>
             <li class="list-group-item">Salario: {{job.salary}}</li>
             <li class="list-group-item">Teléfono: {{job.phone}}</li>
             <li class="list-group-item">Empresa: {{job.company}}</li>

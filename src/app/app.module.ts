@@ -21,6 +21,7 @@ import { InformacionInstitucionalComponent } from './pages/informacion-instituci
 import { ContactenosComponent } from './pages/contactenos/contactenos.component';
 import { HojaDeVidaComponent } from './pages/hoja-de-vida/hoja-de-vida.component';
 import { TerminosCondicionesComponent } from './modals/terminos-condiciones/terminos-condiciones.component';
+import { OfertasLaboralesDetallesComponent } from './pages/ofertas-laborales/ofertas-laborales-detalles/ofertas-laborales-detalles.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'ofertas', component: OfertasLaboralesComponent },
   { path: 'informacion', component: InformacionInstitucionalComponent },
   { path: 'contactenos', component: ContactenosComponent },
-  { path: 'hojadevida', component: HojaDeVidaComponent }
+  { path: 'hojadevida', component: HojaDeVidaComponent },
+  { path: 'description-job/:idJob', component: OfertasLaboralesDetallesComponent }
 ];
 
 @NgModule({
@@ -44,6 +46,7 @@ const routes: Routes = [
     ContactenosComponent,
     HojaDeVidaComponent,
     TerminosCondicionesComponent,
+    OfertasLaboralesDetallesComponent,
   ],
   imports: [
     BrowserModule,
