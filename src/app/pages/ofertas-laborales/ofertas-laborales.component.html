@@ -6,9 +6,18 @@
 <!-- Team -->
 <section id="team" class="pb-5">
     <div class="container">
+
+        <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Buscar oferta laboral</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm" name="filterJob" [(ngModel)]="filterJob">
+        </div>
+
         <div class="row">
             <!-- Team member -->
-            <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let job of jobs">
+            <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let job of jobs | filterOfertas:filterJob">
                 <div class="image-flip" *ngIf="job.state">
                     <div class="mainflip flip-0">
                         <div class="frontside">

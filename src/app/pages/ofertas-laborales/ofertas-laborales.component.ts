@@ -15,6 +15,7 @@ export class OfertasLaboralesComponent implements OnInit {
   jobs: Job[];
   modalRef: MdbModalRef<HojasDeVidaModalComponent>;
   modalRefTerminos: MdbModalRef<TerminosCondicionesComponent>;
+  filterJob = '';
   @Output() buttonClicked = new EventEmitter();
 
   constructor(private modalService: MdbModalService, protected jobService: JobsService) {
@@ -36,6 +37,9 @@ export class OfertasLaboralesComponent implements OnInit {
       .subscribe(
         (jobs) => {
           this.jobs = jobs;
+          this.jobs.sort((a, b) => {
+            return new Date(b.dateInit).getTime() - new Date(a.dateInit).getTime()
+          });
         },
         (error) => {
           console.error(error);

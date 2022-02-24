@@ -22,6 +22,7 @@ import { ContactenosComponent } from './pages/contactenos/contactenos.component'
 import { HojaDeVidaComponent } from './pages/hoja-de-vida/hoja-de-vida.component';
 import { TerminosCondicionesComponent } from './modals/terminos-condiciones/terminos-condiciones.component';
 import { OfertasLaboralesDetallesComponent } from './pages/ofertas-laborales/ofertas-laborales-detalles/ofertas-laborales-detalles.component';
+import { FilterOfertasPipe } from './pages/ofertas-laborales/filter-ofertas.pipe';
 
 
 const routes: Routes = [
@@ -47,6 +48,7 @@ const routes: Routes = [
     HojaDeVidaComponent,
     TerminosCondicionesComponent,
     OfertasLaboralesDetallesComponent,
+    FilterOfertasPipe,
   ],
   imports: [
     BrowserModule,
