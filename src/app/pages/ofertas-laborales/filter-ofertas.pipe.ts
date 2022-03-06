@@ -11,7 +11,7 @@ export class FilterOfertasPipe implements PipeTransform {
     for (const jobs of value) {
       if (jobs.name.toLowerCase().indexOf(arg.toLowerCase()) > -1 || jobs.description.toLowerCase().indexOf(arg.toLowerCase()) > -1 ||
         jobs.dateInit.toLowerCase().indexOf(arg.toLowerCase()) > -1 || jobs.dateFinish.toLowerCase().indexOf(arg.toLowerCase()) > -1 ||
-        jobs.salary.toLowerCase().indexOf(arg.toLowerCase()) > -1 || jobs.phone.toLowerCase().indexOf(arg.toLowerCase()) > -1 ||
+        jobs.salary.toLowerCase().indexOf(arg.toLowerCase()) > -1 || jobs.address.toLowerCase().indexOf(arg.toLowerCase()) > -1 ||
         jobs.company.toLowerCase().indexOf(arg.toLowerCase()) > -1 || jobs.category.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
         resultJobs.push(jobs);
       };
