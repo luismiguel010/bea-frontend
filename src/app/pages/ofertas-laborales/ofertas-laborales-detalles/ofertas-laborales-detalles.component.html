@@ -1,7 +1,7 @@
 <p></p>
 
 <div>
-    <h1 class='title'>{{job.name}}</h1>
+    <h1 class='title'><b>{{job.name}}</b></h1>
 </div>
 
 <p></p>
@@ -15,13 +15,13 @@
 <div class="card">
     <div class="card-body">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Fecha de publicación: {{job.dateInit | date:'dd/MM/yyyy'}}</li>
-            <li class="list-group-item">Fecha de vencimiento: {{job.dateFinish | date:'dd/MM/yyyy'}}</li>
-            <li class="list-group-item">Requisito: {{job.requisito}}</li>
-            <li class="list-group-item">Salario: {{job.salary}}</li>
-            <li class="list-group-item">Dirección: {{job.address}}</li>
-            <li class="list-group-item">Empresa: {{job.company}}</li>
-            <li class="list-group-item">Categoría: {{job.category}}</li>
+            <li class="list-group-item"><b>Fecha de publicación:</b> {{job.dateInit | date:'dd/MM/yyyy'}}</li>
+            <li class="list-group-item"><b>Fecha de vencimiento:</b> {{job.dateFinish | date:'dd/MM/yyyy'}}</li>
+            <li class="list-group-item"><b>Requisito:</b> {{job.requisito}}</li>
+            <li class="list-group-item"><b>Salario:</b> {{job.salary}}</li>
+            <li class="list-group-item"><b>Dirección:</b> {{job.address}}</li>
+            <li class="list-group-item"><b>Empresa:</b> {{job.company}}</li>
+            <li class="list-group-item"><b>Categoría:</b> {{job.category}}</li>
         </ul>
     </div>
 </div>
