@@ -1,3 +1,4 @@
+import swal from 'sweetalert2';
 import { Job } from 'src/app/models/job';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -22,7 +23,7 @@ export class OfertasLaboralesDetallesComponent implements OnInit {
           this.job = job
         },
         (error) => {
-          console.error(error);
+          swal.fire('Error interno en el servidor', 'Comuníquese con nosotros para informar el problema', 'error')
         }
       )
   }

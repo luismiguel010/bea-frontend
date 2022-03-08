@@ -1,3 +1,4 @@
+import swal from 'sweetalert2';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { HojasDeVidaModalComponent } from 'src/app/modals/hojas-de-vida-modal/hojas-de-vida-modal.component';
@@ -42,7 +43,7 @@ export class OfertasLaboralesComponent implements OnInit {
           });
         },
         (error) => {
-          console.error(error);
+          swal.fire('Error interno en el servidor', 'Comuníquese con nosotros para informar el problema', 'error')
         }
       )
   }

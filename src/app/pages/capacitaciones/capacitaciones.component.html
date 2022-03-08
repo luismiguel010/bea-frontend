@@ -1,0 +1,61 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- Team -->
+<section id="team" class="pb-5">
+    <div class="container">
+
+        <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Buscar capacitación</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm" name="filterCapacitacion" [(ngModel)]="filterCapacitacion">
+        </div>
+
+        <div class="row">
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4"
+                *ngFor="let capacitacion of capacitaciones | filterCapacitaciones:filterCapacitacion">
+                <div class="image-flip" *ngIf="capacitacion.state">
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <h4 class="card-title"><b>{{capacitacion.name}}</b></h4>
+                                    <p class="card-text">{{capacitacion.description}}</p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p class="card-text">Inicia el <b>{{capacitacion.dateFinish |
+                                            date:'dd/MM/yyyy HH:mm'}}</b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title"><b>{{capacitacion.name}}</b></h4>
+                                    <p><b>Categoría: </b>{{capacitacion.categoria}}</p>
+                                    <p><b>Modalidad: </b>{{capacitacion.modalidad}}</p>
+                                    <p><b>Lugar: </b>{{capacitacion.lugar}}</p>
+                                    <p><b>Cupos disponibles: </b>{{capacitacion.cupos}}</p>
+                                    <div style="text-align:center"><button type="button"
+                                            [routerLink]="['/capacitacion', capacitacion.idCapacitacion]"
+                                            class="btn btn-primary">Más información</button></div>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+
+        </div>
+    </div>
+</section>
+<!-- Team -->

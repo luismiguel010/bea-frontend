@@ -23,6 +23,9 @@ import { HojaDeVidaComponent } from './pages/hoja-de-vida/hoja-de-vida.component
 import { TerminosCondicionesComponent } from './modals/terminos-condiciones/terminos-condiciones.component';
 import { OfertasLaboralesDetallesComponent } from './pages/ofertas-laborales/ofertas-laborales-detalles/ofertas-laborales-detalles.component';
 import { FilterOfertasPipe } from './pages/ofertas-laborales/filter-ofertas.pipe';
+import { CapacitacionesComponent } from './pages/capacitaciones/capacitaciones.component';
+import { CapacitacionesDetallesComponent } from './pages/capacitaciones/capacitaciones-detalles/capacitaciones-detalles.component';
+import { FilterCapacitacionesPipe } from './pages/capacitaciones/filter-capacitaciones.pipe';
 
 
 const routes: Routes = [
@@ -32,7 +35,9 @@ const routes: Routes = [
   { path: 'informacion', component: InformacionInstitucionalComponent },
   { path: 'contactenos', component: ContactenosComponent },
   { path: 'hojadevida', component: HojaDeVidaComponent },
-  { path: 'description-job/:idJob', component: OfertasLaboralesDetallesComponent }
+  { path: 'description-job/:idJob', component: OfertasLaboralesDetallesComponent },
+  { path: 'capacitaciones', component: CapacitacionesComponent },
+  { path: 'capacitacion/:idCapacitacion', component: CapacitacionesDetallesComponent }
 ];
 
 @NgModule({
@@ -49,6 +54,9 @@ const routes: Routes = [
     TerminosCondicionesComponent,
     OfertasLaboralesDetallesComponent,
     FilterOfertasPipe,
+    CapacitacionesComponent,
+    CapacitacionesDetallesComponent,
+    FilterCapacitacionesPipe,
   ],
   imports: [
     BrowserModule,

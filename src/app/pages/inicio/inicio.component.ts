@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Capacitacion } from 'src/app/models/Capacitacion';
+import { CapacitacionesService } from 'src/app/services/capacitaciones.service';
 import { DataImagesService } from 'src/app/services/data-images.service';
 import { Result } from './result';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-inicio',
@@ -9,12 +12,12 @@ import { Result } from './result';
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class InicioComponent implements OnInit {
-
+  capacitaciones: Capacitacion[];
   sliderArray: any[];
   transform: number;
   selectedIndex = 0;
 
-  constructor(private dataImageService: DataImagesService) {
+  constructor(private dataImageService: DataImagesService, private capacitacionesService: CapacitacionesService) {
     this.sliderArray = [
       { img: '../../assets/inicio1.jpg', alt: '', text: 'Da a conocer tus habilidades en las Ofertas laborales que tenemos.' },
       { img: '../../assets/inicio2.jpg', alt: '', text: 'Envíanos tu hoja de vida en la sección Hojas de vida si no encuentras tu oferta laboral.' },
@@ -28,7 +31,18 @@ export class InicioComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.capacitacionesService.getCapacitaciones()
+      .subscribe(
+        (capacitaciones) => {
+          this.capacitaciones = capacitaciones;
+          this.capacitaciones.sort((a, b) => {
+            return new Date(b.dateInit).getTime() - new Date(a.dateInit).getTime()
+          });
+        },
+        (error) => {
+          swal.fire('Error interno en el servidor', 'Comuníquese con nosotros para informar el problema', 'error')
+        }
+      )
   }
 
   selected(x) {
