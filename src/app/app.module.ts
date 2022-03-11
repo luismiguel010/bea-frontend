@@ -26,6 +26,7 @@ import { FilterOfertasPipe } from './pages/ofertas-laborales/filter-ofertas.pipe
 import { CapacitacionesComponent } from './pages/capacitaciones/capacitaciones.component';
 import { CapacitacionesDetallesComponent } from './pages/capacitaciones/capacitaciones-detalles/capacitaciones-detalles.component';
 import { FilterCapacitacionesPipe } from './pages/capacitaciones/filter-capacitaciones.pipe';
+import { CapacitacionesInicioComponent } from './pages/inicio/capacitaciones-inicio/capacitaciones-inicio.component';
 
 
 const routes: Routes = [
@@ -57,6 +58,7 @@ const routes: Routes = [
     CapacitacionesComponent,
     CapacitacionesDetallesComponent,
     FilterCapacitacionesPipe,
+    CapacitacionesInicioComponent,
   ],
   imports: [
     BrowserModule,

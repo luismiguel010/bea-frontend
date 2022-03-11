@@ -19,11 +19,11 @@ export class InicioComponent implements OnInit {
 
   constructor(private dataImageService: DataImagesService, private capacitacionesService: CapacitacionesService) {
     this.sliderArray = [
-      { img: '../../assets/inicio1.jpg', alt: '', text: 'Da a conocer tus habilidades en las Ofertas laborales que tenemos.' },
-      { img: '../../assets/inicio2.jpg', alt: '', text: 'Envíanos tu hoja de vida en la sección Hojas de vida si no encuentras tu oferta laboral.' },
-      { img: '../../assets/inicio3.jpg', alt: '', text: 'Te ayudamos a conseguir el trabajo soñado y el trabajo que mereces.' },
+      //{ img: '../../assets/inicio1.jpg', alt: '', text: 'Da a conocer tus habilidades en las Ofertas laborales que tenemos.' },
+      { img: '../../assets/inicio2.jpg', alt: '', text: 'Te ayudamos a conseguir el trabajo soñado y el trabajo que mereces.' },
+      { img: '../../assets/inicio1.jpg', alt: '', text: 'Envíanos tu hoja de vida en la sección Hojas de vida si no encuentras tu oferta laboral.' },
       { img: '../../assets/inicio4.jpg', alt: '', text: 'No esperes que las oportunidades lleguen solas. Tienes que hacer que ocurra.' },
-      { img: '../../assets/inicio5.jpg', alt: '', text: 'Tu gran oportunidad puede ser justo donde te encuentras ahora.' }
+      { img: '../../assets/inicio5.jpg', alt: '', text: 'Dale un vistazo también, a nuestras capacitaciones que tenemos disponibles.' }
 
     ];
     this.selectedIndex = 0;
