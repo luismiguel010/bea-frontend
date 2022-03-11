@@ -1,8 +1,8 @@
 export enum NivelAcademico {
-    Primaria = 'Primaria',
-    Bachiller = 'Bachiller',
-    Técnico = 'Técnico',
-    Tecnólogo = 'Tecnólogo',
-    Profesional = 'Profesional',
-    Postgrado = 'Postgrado'
+    Escuela = "Escuela",
+    Bachillerato = "Bachillerato",
+    Pregrado = "Pregrado",
+    Especialista = "Especialista",
+    Posgrado = "Posgrado",
+    Doctorado = "Doctorado"
 }
