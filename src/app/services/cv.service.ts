@@ -26,7 +26,7 @@ export class CvService {
     this.createAuthorizationHeader(headers);
     let formdata: FormData = new FormData();
     const fileData = new Blob([file], { type: "multipart/form-data" })
-    formdata.append('file', fileData);
+    formdata.append('file', fileData, file.name);
     const cvJson = new Blob([JSON.stringify(cv)], { type: "application/json" });
     formdata.append('cv', cvJson);
 
