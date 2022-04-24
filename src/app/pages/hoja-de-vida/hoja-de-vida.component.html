@@ -18,12 +18,7 @@
     <div class="card-body">
         <div class="modal-body">
             <form (ngSubmit)="send()">
-                <!-- Progress Bar -->
-                <div class="progress form-group" *ngIf="progress > 0">
-                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
-                        [style.width.%]="progress">
-                    </div>
-                </div>
+
                 <div class="form-group">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Nombres" aria-label="Nombres"
@@ -94,6 +89,13 @@
                     </div>
                     <p class="infoprofession">Adjunte su hoja de vida haciendo click en el botón Seleccionar Archivo.
                     </p>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress form-group" *ngIf="progress > 0">
+                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                        [style.width.%]="progress">
+                    </div>
                 </div>
 
                 <div class="modal-footer">
