@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Capacitacion } from 'src/app/models/Capacitacion';
 import { CapacitacionesService } from 'src/app/services/capacitaciones.service';
 import { DataImagesService } from 'src/app/services/data-images.service';
@@ -16,6 +16,27 @@ export class InicioComponent implements OnInit {
   sliderArray: any[];
   transform: number;
   selectedIndex = 0;
+  public adjustedImageUrl: string;
+  /**
+   * Image Object with large, medium & small version
+   */
+  @Input() imgBaseName: string;
+  /**
+   * Image alternative Name
+   */
+  @Input() imgAlt: string;
+  /**
+   * Styling css classes
+   */
+  @Input() imgClasses: string;
+  imagebase: any;
+
+  /**
+   * Listener for viewport resize
+   */
+  @HostListener('window:resize') onResize() {
+    this.adjustImageName();
+  }
 
   constructor(private dataImageService: DataImagesService, private capacitacionesService: CapacitacionesService) {
     this.sliderArray = [
@@ -28,6 +49,10 @@ export class InicioComponent implements OnInit {
     ];
     this.selectedIndex = 0;
     this.transform = 100;
+  }
+
+  ngOnChanges() {
+    this.adjustImageName();
   }
 
   ngOnInit() {
@@ -61,6 +86,31 @@ export class InicioComponent implements OnInit {
     if (this.selectedIndex > 4) {
       this.selectedIndex = 0;
     }
+  }
+
+  private adjustImageName() {
+    const mobile_max_break = 480;
+    const tablet_max_break = 1024;
+    const imagePrefix = '/images/';
+    const smallImageName = 'small.jpg';
+    const mediumImageName = 'medium.jpg';
+    const largeImageName = 'large.jpg';
+
+    let imageSuffix: string;
+
+    const viewport =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+
+    if (viewport < mobile_max_break) {
+      imageSuffix = smallImageName;
+    } else if (viewport < tablet_max_break) {
+      imageSuffix = mediumImageName;
+    } else {
+      imageSuffix = largeImageName;
+    }
+    this.adjustedImageUrl = this.imagebase.url + imagePrefix + this.imgBaseName + '/' + imageSuffix;
   }
 
 
