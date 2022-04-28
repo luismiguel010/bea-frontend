@@ -27,6 +27,7 @@ import { CapacitacionesComponent } from './pages/capacitaciones/capacitaciones.c
 import { CapacitacionesDetallesComponent } from './pages/capacitaciones/capacitaciones-detalles/capacitaciones-detalles.component';
 import { FilterCapacitacionesPipe } from './pages/capacitaciones/filter-capacitaciones.pipe';
 import { CapacitacionesInicioComponent } from './pages/inicio/capacitaciones-inicio/capacitaciones-inicio.component';
+import { MenuCardsComponent } from './pages/inicio/menu-cards/menu-cards.component';
 
 
 const routes: Routes = [
@@ -59,6 +60,7 @@ const routes: Routes = [
     CapacitacionesDetallesComponent,
     FilterCapacitacionesPipe,
     CapacitacionesInicioComponent,
+    MenuCardsComponent,
   ],
   imports: [
     BrowserModule,
