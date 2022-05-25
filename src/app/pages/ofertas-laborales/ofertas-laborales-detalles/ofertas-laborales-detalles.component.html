@@ -7,21 +7,31 @@
 <p></p>
 
 <div>
-    <p class='info'>{{job.description}}</p>
+    <p class='info' style="font-size:20px">{{job.description}}</p>
 </div>
 
 <p></p>
 
-<div class="card">
-    <div class="card-body">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><b>Fecha de publicación:</b> {{job.dateInit | date:'dd/MM/yyyy'}}</li>
-            <li class="list-group-item"><b>Fecha de vencimiento:</b> {{job.dateFinish | date:'dd/MM/yyyy'}}</li>
-            <li class="list-group-item"><b>Requisito:</b> {{job.requisito}}</li>
-            <li class="list-group-item"><b>Salario:</b> {{job.salary}}</li>
-            <li class="list-group-item"><b>Dirección:</b> {{job.address}}</li>
-            <li class="list-group-item"><b>Empresa:</b> {{job.company}}</li>
-            <li class="list-group-item"><b>Categoría:</b> {{job.category}}</li>
-        </ul>
+<div class="col d-flex justify-content-center">
+
+    <div class="card">
+        <h5 class="card-header">Descripción</h5>
+        <div class="card-body">
+            <p class="card-text">{{job.description}}</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Fecha de publicación:</b> {{job.dateInit | date:'dd/MM/yyyy'}}</li>
+                <li class="list-group-item"><b>Fecha de vencimiento:</b> {{job.dateFinish | date:'dd/MM/yyyy'}}</li>
+                <li class="list-group-item"><b>Requisito:</b> {{job.requisito}}</li>
+                <li class="list-group-item"><b>Salario:</b> {{job.salary}}</li>
+                <li class="list-group-item"><b>Dirección:</b> {{job.address}}</li>
+                <li class="list-group-item"><b>Empresa:</b> {{job.company}}</li>
+                <li class="list-group-item"><b>Categoría:</b> {{job.category}}</li>
+            </ul>
+        </div>
     </div>
 </div>
