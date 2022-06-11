@@ -12,26 +12,28 @@
 
 <p></p>
 
-<div class="card">
-    <div class="card-body">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><b>Nombre:</b> {{capacitacion.name}}</li>
-            <li class="list-group-item"><b>Descripción:</b> {{capacitacion.description}}</li>
-            <li class="list-group-item"><b>Objetivo:</b> {{capacitacion.objetivo}}</li>
-            <li class="list-group-item"><b>Dirigido:</b> {{capacitacion.dirigido}}</li>
-            <li class="list-group-item"><b>Contenido:</b> {{capacitacion.contenido}}</li>
-            <li class="list-group-item"><b>Requisitos:</b> {{capacitacion.requisitos}}</li>
-            <li class="list-group-item"><b>Facilitador:</b> {{capacitacion.facilitador}}</li>
-            <li class="list-group-item"><b>Inscripciones hasta :
-                </b>{{setFechaVencimientoInscripciones(capacitacion.dateFinish) |
-                date:'dd/MM/yyyy HH:mm'}}</li>
-            <li class="list-group-item"><b>Inicia:</b> {{capacitacion.dateFinish |
-                date:'dd/MM/yyyy HH:mm'}}</li>
-            <li class="list-group-item"><b>Categoría:</b> {{capacitacion.categoria}}</li>
-            <li class="list-group-item"><b>Modalidad:</b> {{capacitacion.modalidad}}</li>
-            <li class="list-group-item"><b>Contactos de información:</b> {{capacitacion.contactos}}</li>
-            <li class="list-group-item"><b>Lugar:</b> {{capacitacion.lugar}}</li>
-            <li class="list-group-item"><b>Cupos:</b> {{capacitacion.cupos}}</li>
-        </ul>
+<div class="col d-flex justify-content-center">
+    <div class="card">
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Nombre:</b> {{capacitacion.name}}</li>
+                <li class="list-group-item"><b>Descripción:</b> {{capacitacion.description}}</li>
+                <li class="list-group-item"><b>Objetivo:</b> {{capacitacion.objetivo}}</li>
+                <li class="list-group-item"><b>Dirigido:</b> {{capacitacion.dirigido}}</li>
+                <li class="list-group-item"><b>Contenido:</b> {{capacitacion.contenido}}</li>
+                <li class="list-group-item"><b>Requisitos:</b> {{capacitacion.requisitos}}</li>
+                <li class="list-group-item"><b>Facilitador:</b> {{capacitacion.facilitador}}</li>
+                <li class="list-group-item"><b>Inscripciones hasta :
+                    </b>{{setFechaVencimientoInscripciones(capacitacion.dateFinish) |
+                    date:'dd/MM/yyyy HH:mm'}}</li>
+                <li class="list-group-item"><b>Inicia:</b> {{capacitacion.dateFinish |
+                    date:'dd/MM/yyyy HH:mm'}}</li>
+                <li class="list-group-item"><b>Categoría:</b> {{capacitacion.categoria}}</li>
+                <li class="list-group-item"><b>Modalidad:</b> {{capacitacion.modalidad}}</li>
+                <li class="list-group-item"><b>Contactos de información:</b> {{capacitacion.contactos}}</li>
+                <li class="list-group-item"><b>Lugar:</b> {{capacitacion.lugar}}</li>
+                <li class="list-group-item"><b>Cupos:</b> {{capacitacion.cupos}}</li>
+            </ul>
+        </div>
     </div>
 </div>

@@ -17,6 +17,7 @@ export class OfertasLaboralesComponent implements OnInit {
   modalRef: MdbModalRef<HojasDeVidaModalComponent>;
   modalRefTerminos: MdbModalRef<TerminosCondicionesComponent>;
   filterJob = '';
+  idJobOtro = '68cdcc29-09ea-4ac4-9f04-737a9b7a0ca6';
   @Output() buttonClicked = new EventEmitter();
 
   constructor(private modalService: MdbModalService, protected jobService: JobsService) {
@@ -41,6 +42,7 @@ export class OfertasLaboralesComponent implements OnInit {
           this.jobs.sort((a, b) => {
             return new Date(b.dateInit).getTime() - new Date(a.dateInit).getTime()
           });
+          this.jobs = this.jobs.filter(obj => obj.state && obj.idJob !== this.idJobOtro);
         },
         (error) => {
           swal.fire('Error interno en el servidor', 'Comuníquese con nosotros para informar el problema', 'error')

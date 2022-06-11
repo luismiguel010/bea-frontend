@@ -40,7 +40,8 @@ const routes: Routes = [
   { path: 'hojadevida', component: HojaDeVidaComponent },
   { path: 'description-job/:idJob', component: OfertasLaboralesDetallesComponent },
   { path: 'capacitaciones', component: CapacitacionesComponent },
-  { path: 'capacitacion/:idCapacitacion', component: CapacitacionesDetallesComponent }
+  { path: 'capacitacion/:idCapacitacion', component: CapacitacionesDetallesComponent },
+  { path: 'aliados', component: AliadosComponent }
 ];
 
 @NgModule({
