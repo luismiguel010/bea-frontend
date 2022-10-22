@@ -31,7 +31,7 @@ export class HojasDeVidaModalComponent implements OnInit {
   file?: File;
   professions_array: string[] = new Array();
   academic_profile_array: string[] = new Array();
-  newProfession: string;
+  newProfession: string = 'Otro';
   modalRefTerminos: MdbModalRef<TerminosCondicionesComponent>;
   isChecked: boolean;
 
