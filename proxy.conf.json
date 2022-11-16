@@ -1,8 +1,8 @@
 {
-    "/bea/api": {
-        "target": "https://bea-penol.herokuapp.com",
-        "logLevel": "debug",
-        "secure": false,
-        "changeOrigin": true
-    }
+  "/bea/api": {
+    "target": "https://bea-backend.onrender.com",
+    "logLevel": "debug",
+    "secure": false,
+    "changeOrigin": true
+  }
 }
