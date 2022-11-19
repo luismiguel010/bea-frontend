@@ -1,3 +1,4 @@
+import { MaintenanceComponent } from './pages/maintenance/maintenance.component';
 import { JobsService } from './services/jobs.service';
 import { NgModule, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -32,16 +33,17 @@ import { AliadosComponent } from './pages/inicio/aliados/aliados.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
-  { path: '', component: InicioComponent },
-  { path: 'ofertas', component: OfertasLaboralesComponent },
-  { path: 'informacion', component: InformacionInstitucionalComponent },
-  { path: 'contactenos', component: ContactenosComponent },
-  { path: 'hojadevida', component: HojaDeVidaComponent },
-  { path: 'description-job/:idJob', component: OfertasLaboralesDetallesComponent },
-  { path: 'capacitaciones', component: CapacitacionesComponent },
-  { path: 'capacitacion/:idCapacitacion', component: CapacitacionesDetallesComponent },
-  { path: 'aliados', component: AliadosComponent }
+  { path: '', component: MaintenanceComponent }
+  //{ path: '', redirectTo: '/', pathMatch: 'full' },
+  //{ path: '', component: InicioComponent },
+  //{ path: 'ofertas', component: OfertasLaboralesComponent },
+  //{ path: 'informacion', component: InformacionInstitucionalComponent },
+  //{ path: 'contactenos', component: ContactenosComponent },
+  //{ path: 'hojadevida', component: HojaDeVidaComponent },
+  //{ path: 'description-job/:idJob', component: OfertasLaboralesDetallesComponent },
+  //{ path: 'capacitaciones', component: CapacitacionesComponent },
+  //{ path: 'capacitacion/:idCapacitacion', component: CapacitacionesDetallesComponent },
+  //{ path: 'aliados', component: AliadosComponent }
 ];
 
 @NgModule({
