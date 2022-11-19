@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   url_backend: '/bea/api/',
-  //url_backend: 'https://bea-backend.onrender.com/bea/api/',
+  //url_backend: 'https://beobackend.azurewebsites.net/bea/api/',
 };
 
 /*

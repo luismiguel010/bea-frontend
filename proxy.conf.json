@@ -1,6 +1,6 @@
 {
   "/bea/api": {
-    "target": "https://bea-backend.onrender.com",
+    "target": "https://beobackend.azurewebsites.net",
     "logLevel": "debug",
     "secure": false,
     "changeOrigin": true
